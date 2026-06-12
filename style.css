@@ -1,0 +1,72 @@
+/*==== MENU ====*/
+.menu .nav-link {
+    font-weight: 500;
+    color: #333;
+}
+
+.menu .nav-link:hover {
+    color: #0d6efd;
+}
+
+/* hover dropdown */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* hover item */
+.dropdown-item:hover {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+/* ===== BOOK CARD ===== */ 
+.book-card { 
+    background: #fff; 
+    padding: 10px; 
+    border-radius: 10px; 
+    transition: 0.3s; 
+    margin-bottom: 20px; 
+} 
+
+.book-card img { 
+    width: 100%; 
+    height: 180px; 
+    object-fit: cover; 
+    border-radius: 6px; 
+} 
+
+.book-card h6 { 
+    margin-top: 10px; 
+    font-size: 14px; 
+}
+
+/* Hover card */ 
+.book-card:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15); 
+} 
+
+/* ===== FOOTER ===== */ 
+.footer { 
+    margin-top: 50px; 
+    padding: 20px; 
+    background: #f8f9fa; 
+}
+
+/*===== Trending section controls =====*/
+.trending-header {
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.trending-controls button {
+    min-width: 42px;
+    padding: 0.35rem 0.7rem;
+}
+
+@media (max-width: 576px) {
+    .trending-header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
