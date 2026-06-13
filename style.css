@@ -18,7 +18,6 @@
     background-color: #0d6efd;
     color: #fff;
 }
-
 /* ===== BOOK CARD ===== */ 
 .book-card { 
     background: #fff; 
@@ -43,7 +42,7 @@
 /* Hover card */ 
 .book-card:hover { 
     transform: translateY(-5px); 
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15); 
+
 } 
 
 /* ===== FOOTER ===== */ 
