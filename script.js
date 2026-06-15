@@ -1,7 +1,7 @@
 const trendingItems = document.querySelectorAll('.trending-item');
     const prevButton = document.getElementById('trending-prev');
     const nextButton = document.getElementById('trending-next');
-    const pageSize = 4;
+    const pageSize = 5;
     let currentPage = 0;
     const totalPages = Math.ceil(trendingItems.length / pageSize);
 
