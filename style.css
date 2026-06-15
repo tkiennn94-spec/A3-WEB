@@ -62,6 +62,7 @@
     min-width: 42px;
     padding: 0.35rem 0.7rem;
 }
+/* button xem thêm*/
 
 @media (max-width: 576px) {
     .trending-header {
