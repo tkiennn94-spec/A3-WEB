@@ -29,3 +29,4 @@ const trendingItems = document.querySelectorAll('.trending-item');
     });
 
     renderTrendingPage();
+

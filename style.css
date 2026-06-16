@@ -33,6 +33,7 @@ body {
 }
 
 /*==== dropdown hover ==== */
+/* submenu tu dong roi xuong */
 .nav-item.dropdown:hover .dropdown-menu {
     display: block;
     border-color: rgba(36,50,64,0.12);
