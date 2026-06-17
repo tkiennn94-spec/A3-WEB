@@ -1,4 +1,4 @@
-/*====khai báo biến toàn cục====*/
+/*====biến toàn cục====*/
 :root {
     color-scheme: light; /*gia diện sáng*/
     --bg-page: #f3f6fb;/*màu nền chính của trang*/
@@ -21,31 +21,61 @@ body {
 }
 
 /*==== MENU ====*/
+
 .menu .nav-link {
     font-weight: 600;
     color: var(--text);
+    transition: all 0.2s ease;
 }
 
+/* Hover menu cha hoặc menu đang active */
 .menu .nav-link:hover,
-.menu .nav-link.active {
-    color: var(--primary);/*đổi màu khi hover hoặc active*/
+.menu .nav-link.active,
+.nav-item.dropdown:hover > .nav-link {
+    color: var(--primary);
     background: rgba(61,123,253,0.08);
 }
 
-/*==== dropdown hover ==== */
-/* submenu tu dong roi xuong */
-.nav-item.dropdown:hover .dropdown-menu {
-    display: block;
-    border-color: rgba(36,50,64,0.12);
+/*==== DROPDOWN ====*/
+
+.nav-item.dropdown {
+    position: relative;
 }
 
+/* Ẩn mũi tên Bootstrap */
 .dropdown-toggle::after {
-    display: none;/*ẩn mũi tên mặc định của dropdown */
+    display: none;
 }
 
-/* hover item */
+/* Mặc định ẩn submenu */
+.dropdown-menu {
+    display: none;
+    margin-top: 0;
+    border-color: rgba(36,50,64,0.12);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+/* Hover menu cha => hiện submenu */
+.nav-item.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+/* Hiệu ứng menu con */
+.dropdown-item {
+    transition: all 0.2s ease;
+}
+
+/* Hover menu con */
 .dropdown-item:hover {
-    background-color: var(--primary);/*hover item*/
+    background-color: var(--primary);
+    color: #fff;
+}
+
+/* Menu con đang active */
+.dropdown-item.active,
+.dropdown-item.active:hover {
+    background-color: var(--primary);
     color: #fff;
 }
 

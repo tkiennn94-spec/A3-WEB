@@ -1,32 +1,49 @@
-const trendingItems = document.querySelectorAll('.trending-item');
-    const prevButton = document.getElementById('trending-prev');
-    const nextButton = document.getElementById('trending-next');
-    const pageSize = 5;
-    let currentPage = 0;
-    const totalPages = Math.ceil(trendingItems.length / pageSize);
+document.addEventListener("DOMContentLoaded", function () {
 
-    function renderTrendingPage() {
-        trendingItems.forEach((item, index) => {
-            const itemPage = Math.floor(index / pageSize);
-            item.style.display = itemPage === currentPage ? '' : 'none';
-        });
-        prevButton.disabled = currentPage === 0;
-        nextButton.disabled = currentPage === totalPages - 1;
-    }
+    const currentPage =
+        window.location.pathname.split("/").pop();
 
-    prevButton.addEventListener('click', () => {
-        if (currentPage > 0) {
-            currentPage -= 1;
-            renderTrendingPage();
+    // MENU CHA
+    document.querySelectorAll(".nav-link").forEach(link => {
+
+        const href = link.getAttribute("href");
+
+        if (!href || href === "#") return;
+
+        const page = href.split("/").pop();
+
+        if (page === currentPage) {
+            link.classList.add("active");
         }
+
     });
 
-    nextButton.addEventListener('click', () => {
-        if (currentPage < totalPages - 1) {
-            currentPage += 1;
-            renderTrendingPage();
-        }
+    // MENU CON
+    document.querySelectorAll(".dropdown").forEach(dropdown => {
+
+        const parentLink =
+            dropdown.querySelector(".nav-link");
+
+        dropdown.querySelectorAll(".dropdown-item")
+            .forEach(item => {
+
+                const href =
+                    item.getAttribute("href");
+
+                if (!href) return;
+
+                const page =
+                    href.split("/").pop();
+
+                if (page === currentPage) {
+
+                    item.classList.add("active");
+
+                    if (parentLink) {
+                        parentLink.classList.add("active");
+                    }
+                }
+            });
     });
 
-    renderTrendingPage();
-
+});
